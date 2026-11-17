@@ -1,0 +1,10 @@
+baseURL = "https://tealcwu.com/"
+languageCode = "zh-cn"
+title = "Tealc Wu"
+theme = "PaperMod"
+
+[params]
+  env = "production"
+
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
