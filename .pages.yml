@@ -1,19 +1,53 @@
 media:
-  input: public/images
+  input: static/images
   output: /images
 
 content:
-  - name: articles
-    label: Articles
+  - name: posts
+    label: 文章管理
     type: collection
-    path: src/content/blog
+    path: content/posts
+    format: toml-frontmatter
+
+    view:
+      primary: title
+      fields: [title, date, draft]
+      sort: [date]
+      default:
+        sort: date
+        order: desc
+
     fields:
       - name: title
-        label: Title
+        label: 标题
         type: string
+        required: true
+
       - name: date
-        label: Publish Date
+        label: 发布日期
         type: date
+        options:
+          time: true
+
+      - name: draft
+        label: 草稿
+        type: boolean
+        default: false
+
+      - name: description
+        label: 文章摘要
+        type: text
+
+      - name: categories
+        label: 分类
+        type: string
+        list: true
+
+      - name: tags
+        label: 标签
+        type: string
+        list: true
+
       - name: body
-        label: Content
+        label: 正文
         type: rich-text
