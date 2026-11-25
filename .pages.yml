@@ -10,12 +10,12 @@ content:
     format: toml-frontmatter
 
     filename:
-    template: "{year}-{month}-{day}-{fields.slug}.md"
-    field: create
+      template: "{primary}.md"
+      field: create
 
     view:
-      primary: title
-      fields: [title, date, draft]
+      primary: slug
+      fields: [title, slug, date, draft]
       sort: [date]
       default:
         sort: date
@@ -27,6 +27,12 @@ content:
         type: string
         required: true
 
+      - name: slug
+        label: 文章标识
+        type: string
+        required: true
+        description: "例如 unity-object-access"
+
       - name: date
         label: 发布日期
         type: date
@@ -34,13 +40,6 @@ content:
         options:
           time: true
           format: "yyyy-MM-dd'T'HH:mm:ssXXX"
-
-      - name: slug
-        label: 文章标识
-        type: string
-        required: true
-        description: "使用英文小写字母、数字和连字符，例如 unity-object-access"
-        pattern: "^[a-z0-9]+(-[a-z0-9]+)*$"
 
       - name: draft
         label: 草稿
