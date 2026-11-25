@@ -26,8 +26,10 @@ content:
       - name: date
         label: 发布日期
         type: date
+        required: true
         options:
           time: true
+          format: "yyyy-MM-dd'T'HH:mm:ssXXX"
 
       - name: draft
         label: 草稿
