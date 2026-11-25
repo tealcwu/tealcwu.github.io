@@ -1,0 +1,19 @@
+media:
+  input: public/images
+  output: /images
+
+content:
+  - name: articles
+    label: Articles
+    type: collection
+    path: src/content/blog
+    fields:
+      - name: title
+        label: Title
+        type: string
+      - name: date
+        label: Publish Date
+        type: date
+      - name: body
+        label: Content
+        type: rich-text
