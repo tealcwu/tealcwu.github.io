@@ -2,6 +2,7 @@ baseURL = "https://tealcwu.com/"
 languageCode = "zh-cn"
 title = "Tealc Wu"
 theme = "PaperMod"
+timeZone = "Asia/Shanghai"
 
 [params]
   env = "production"
